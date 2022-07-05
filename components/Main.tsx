@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal'
 import { useEffect, useState } from 'react'
 import CompanyForm from './CompanyForm'
 
-let c: Company = {
+let test: Company = {
   name: 'test',
   address: 'hell',
   OGRN: 12,
@@ -36,7 +36,7 @@ const Main = () => {
   })
 
   useEffect(() => {
-    console.log(companies)
+    //console.log(companies)
   }, [companies]);
 
   function addCompany(company: Company) {
@@ -59,7 +59,7 @@ const Main = () => {
       </Head>
 
       <header className='d-flex bg-primary bg-opacity-75 text-white p-2'>
-        {title}
+        <h5>{title}</h5>
       </header>
 
       <div className='container p-3'>

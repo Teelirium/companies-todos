@@ -1,7 +1,8 @@
-import { useRef } from "react";
 import { CloseButton } from "react-bootstrap";
 import CardHeader from "react-bootstrap/esm/CardHeader";
 import type Company from "../types/Company";
+import axios from "axios";
+import config from './apiConfig';
 
 function CompanyView({
   company,
@@ -46,7 +47,8 @@ function CompanyView({
         </span>
       </div>
       <div>ОГРН: {company.OGRN.toString()}</div>
-      <div>ИНН: {company.INN.toString()}</div>
+      <div>ИНН: {company.INN.toString()}
+      </div>
       <div>
         Дата регистрации:{" "}
         {new Date(company.registrationDate).toLocaleDateString()}
