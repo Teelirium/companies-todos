@@ -1,7 +1,8 @@
 Установка и запуск:
 ```
 1. yarn install
-2. yarn dev
+2. .env с жетоном для API
+3. yarn dev
 ```
 
 Задания:
