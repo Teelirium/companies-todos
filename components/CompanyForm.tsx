@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import type Company from '../types/Company';
 
 function CompanyForm({addCompany} : {addCompany: (company:Company)=>void}) {
+    //@ts-ignore
     const [formData, setFormData] = useState<Company>({});
 
     function handleSubmit(event: FormEvent): void {

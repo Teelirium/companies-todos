@@ -35,11 +35,22 @@ const Main = () => {
       localStorage.setItem('companies', JSON.stringify(companies));
   })
 
+  useEffect(() => {
+    console.log(companies)
+  }, [companies]);
+
   function addCompany(company: Company) {
     setCompanies([...companies, company]);
     toggleModal();
   }
 
+  function updateCompanies(updateFunc:(companiesCopy:Company[])=>Company[]) {
+    const newCompanies = updateFunc(companies.slice());
+    setCompanies(newCompanies);
+    localStorage.setItem('companies', JSON.stringify(newCompanies));
+  }
+
+  let i = 0;
   return (
     <div>
       <Head>
@@ -53,13 +64,14 @@ const Main = () => {
 
       <div className='container p-3'>
         <div className='row justify-content-center'>
-          <div className='btn btn-primary col-2'
+          <div className='btn btn-primary col-4'
           onClick={toggleModal}>
             Добавить компанию
           </div>
         </div>
         <ul className='row m-4 justify-content-center'>
-          {companies.map(c => <CompanyView key={c.OGRN+''} company={c}/>)}
+          {companies.map(c => <CompanyView key={i++} company={c} index={i}
+          updateCompanies={updateCompanies}/>)}
         </ul>
       </div>
 
