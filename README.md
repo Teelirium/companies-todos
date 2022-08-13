@@ -1,7 +1,7 @@
 Установка и запуск:
 ```
 1. yarn install
-2. .env с жетоном для API
+2. файл .env с NEXT_PUBLIC_API_TOKEN - жетоном для API
 3. yarn dev
 ```
 
