@@ -5,9 +5,9 @@ import Form from 'react-bootstrap/Form';
 import type Company from '../types/Company';
 
 function CompanyForm({ addCompany }: { addCompany: (company: Company) => void }) {
+    const form = useRef<HTMLFormElement>(null);
     //@ts-ignore
     const [formData, setFormData] = useState<Company>({});
-    const form = useRef<HTMLFormElement>();
 
     function handleSubmit(event: FormEvent): void {
         event.preventDefault();
@@ -59,7 +59,7 @@ function CompanyForm({ addCompany }: { addCompany: (company: Company) => void })
         }
         setFormData(company);
     }
-    //@ts-ignore
+
     return <Form onSubmit={handleSubmit} ref={form}>
         <Form.Group>
             <Form.Label>Название

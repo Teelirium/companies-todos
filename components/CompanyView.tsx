@@ -1,8 +1,6 @@
 import { CloseButton } from "react-bootstrap";
 import CardHeader from "react-bootstrap/esm/CardHeader";
 import type Company from "../types/Company";
-import axios from "axios";
-import config from './apiConfig';
 
 function CompanyView({
   company,
@@ -11,20 +9,19 @@ function CompanyView({
 }: {
   company: Company;
   index: number;
-  updateCompanies: (updateFunc:(companiesCopy:Company[])=>Company[]) => void;
+  updateCompanies: (updateFunc: (companiesCopy: Company[]) => Company[]) => void;
 }) {
-  //@ts-ignore
   function updateAddress(value: string) {
     company.address = value;
     updateCompanies((companies) => {
-        companies[index] = company;
-        return companies;
+      companies[index] = company;
+      return companies;
     })
   }
   function removeCompany() {
     updateCompanies((companies) => {
-        companies.splice(index, 1);
-        return companies;
+      companies.splice(index, 1);
+      return companies;
     })
   }
   return (

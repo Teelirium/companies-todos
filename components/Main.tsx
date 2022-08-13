@@ -20,7 +20,7 @@ const Main = () => {
   const [show, setShow] = useState(false);
 
   function toggleModal() {
-    setShow(!show);
+    setShow(prev => !prev);
   }
 
   useEffect(() => {
